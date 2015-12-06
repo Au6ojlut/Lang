@@ -122,24 +122,32 @@ f.close()
 
 #massive_sort(all_grams, languages)
 print("grams ready \n")
-number_of_grams(all_grams, [10, 40, 30])
+number_of_grams(all_grams, [15, 60, 50])
 #delete_second_element(all_grams)
-
 get_vec(vec_of_all_grams, all_grams)
-print("vector of grams ready")
+print("vector of grams ready ", len(vec_of_all_grams))
 
 data_train = []
 data_answer = []
-f = open('out.txt', 'r', encoding="utf8")
+counter11 = 1
+f = open('out_copy.txt', 'r', encoding="utf8")
 for line in f:
     data_train.append([line[3:].count(q) for q in vec_of_all_grams])
     data_answer.append(languages.index(line.split()[0])+1)
+    if counter11 > 50000:
+        break
+    counter11 += 1
 f.close()
 print("have data from file")
 data_predict = []
-f = open('out2.txt', 'r', encoding="utf8")
+f = open('out_copy.txt', 'r', encoding="utf8")
+counter12 = 1
+hey = []
 for line in f:
-    data_predict.append([line.count(q) for q in vec_of_all_grams])
+    if counter12 > 50000:
+        hey.append(line.split()[0])
+        data_predict.append([line[3:].count(q) for q in vec_of_all_grams])
+    counter12 += 1
 f.close()
 data_train = np.array(data_train)
 data_answer = np.array(data_answer)
@@ -151,6 +159,8 @@ model.fit(data_train, data_answer)
 print("Start predicting")
 predicted_m = model.predict(data_predict)
 f3 = open('answering.txt', 'w', encoding="utf8")
+cas = 0
 for item in predicted_m:
-    f3.write("%s\n" % languages[item-1].upper())
+    f3.write(languages[item-1].upper() + ' ' + hey[cas].upper() + '\n')
+    cas += 1
 f3.close()
