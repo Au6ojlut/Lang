@@ -1,5 +1,4 @@
 import re
-from nltk.util import ngrams
 from collections import defaultdict
 from math import log
 import numpy as np
@@ -28,24 +27,22 @@ def list_merge_3(lstlst):   # thanks http://habrahabr.ru/post/63539/ A LOT
 
 
 def n_gram_vec(line, language, grams_n):  # get all grams from line
-    for number in range(1, 4):
+   for number in range(1, 4):
         added = []
-        line1 = [x.strip(' ') for x in line[3:]]
-        line1.pop()
-        line1 = [x for x in line1 if x]
-        for tmp in ngrams(line1, number):
-            tmp1 = ''.join(list_merge_3(tmp))
-            count = line[3:].count(tmp1)
+        line1 = line[3:len(line)-1].replace(' ', '')
+        line1 = [line1[ind:ind+number] for ind in range(len(line1)-number+1)]
+        for tmp in line1:
+            count = line[3:].count(tmp)
             if count:
-                place = [same.count(tmp1) for same in grams_n[number-1][language]] or [0]
+                place = [same.count(tmp) for same in grams_n[number-1][language]] or [0]
 
                 if not max(place):
-                    grams_n[number-1][language].append([tmp1, count])
-                    added.append(tmp1)
+                    grams_n[number-1][language].append([tmp, count])
+                    added.append(tmp)
                 else:
-                    if not added.count(tmp1):
+                    if not added.count(tmp):
                         grams_n[number-1][language][place.index(max(place))][1] += count
-                        added.append(tmp1)
+                        added.append(tmp)
 
 
 def massive_sort(m_my_grams, m_languages):  # sort massive by counts value
@@ -59,7 +56,9 @@ def number_of_grams(my_grams, vec_of_numbers):
         for j in my_grams[i]:
                 j[vec_of_numbers[i]:] = []
 
+
 # don't use yet
+
 def delete_the_same(unique_gram):  # can be optimized but i am lazy(
     buffer = [[gram[0] for gram in lang] for lang in unique_gram]
     for k in range(len(unique_gram)):
@@ -123,7 +122,7 @@ f.close()
 
 #massive_sort(all_grams, languages)
 print("grams ready \n")
-number_of_grams(all_grams, [10, 10, 15])
+number_of_grams(all_grams, [10, 40, 30])
 #delete_second_element(all_grams)
 
 get_vec(vec_of_all_grams, all_grams)

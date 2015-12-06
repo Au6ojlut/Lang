@@ -1,7 +1,4 @@
 import re
-from nltk.util import ngrams
-from collections import defaultdict
-from math import log
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
 
