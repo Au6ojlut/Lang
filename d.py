@@ -47,24 +47,24 @@ fourgrams.close()
 f.close()
 
 print("grams ready \n")
-number_of_grams(all_grams, [15, 40, 50, 30])
+number_of_grams(all_grams, [32, 100, 100, 100])
 get_vec(vec_of_all_grams, all_grams, len(languages))
 print("vector of grams ready ", len(vec_of_all_grams))
-'''
+
 data_train = []
 data_answer = []
 
 
 f = open('out.txt', 'r', encoding="utf8")
+w = open('tr_vec.txt', 'w', encoding="utf8")
 for line in f:
-    data_train.append([line[3:].count(q) for q in vec_of_all_grams])
-    data_answer.append(languages.index(line.split()[0])+1)
+    w.write(''.join(str(languages.index(line.split()[0])+1)) + ' ' + ' '.join(str(line[3:].count(q)) for q in vec_of_all_grams) + '\n')
 f.close()
 
 
 print("have data from file")
 
-'''
+"""
 
 data_predict = []
 f = open('out2.txt', 'r', encoding="utf8")
@@ -72,13 +72,22 @@ counter = 1
 for line in f:
     data_predict.append([line.count(j) for j in vec_of_all_grams])
     #print([line.count(j) for j in vec_of_all_grams])
-    counter +=1
-    if counter > 10:
-        break
-print((data_predict[1]))
 
+#print((data_predict[1]))
+answer = []
 
-w = open('answering.txt')
+# maybe add priority
+'''
+for line in data_predict:
+    tmp = []
+    for q in range(1, len(languages)+1):
+        tmp.append([sum(line[(q-1)*135:135*q]), languages[q-1]])
+    answer.append(get_max_element(tmp)[1])
+#answer
+w = open('answering.txt', 'w')
+for q in answer:
+    w.write(q.upper() + '\n')
+w.close()
 '''
 for line in f:
     data_predict.append([line[3:].count(q) for q in vec_of_all_grams])
@@ -100,4 +109,4 @@ f3 = open('answering.txt', 'w', encoding="utf8")
 for item in predicted_m:
     f3.write(languages[item-1].upper() + '\n')
 f3.close()
-'''
+"""

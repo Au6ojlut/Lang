@@ -70,3 +70,11 @@ def delete_the_same(unique_gram):  # can be optimized but i am lazy(
         for d in deleting_bufer:
             unique_gram[k].pop(buffer[k].index(d))
             buffer[k].remove(d)
+
+
+def get_max_element(massive): # return element with max value, if all of them < 0 return massive[0]
+    ret = massive[0]
+    for q in massive:
+        if q[0] > ret[0]:
+            ret = q
+    return ret
