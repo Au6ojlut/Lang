@@ -9,11 +9,10 @@ def delete_second_element(my_grams):
             j[1:] = []
 
 
-def get_vec(all_vec, all_grams):
-    for q in all_grams:
-        for j in q:
-            for i in j:
-                all_vec.extend(i)
+def get_vec(all_vec, all_grams, languages_number):
+    for q in range(languages_number):
+        for j in range(len(all_grams)):
+                all_vec.extend(all_grams[j][q])
 
 
 def list_merge_3(lstlst): #thanks http://habrahabr.ru/post/63539/ A LOT

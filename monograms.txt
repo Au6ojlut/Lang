@@ -1,15 +1,15 @@
-sv i a e n r t f l g u d s o c
-es a e o i n s r d u t l g c p ó m y b í f v á z q ñ x é ú h j
-en e o t r a i h n s m d f c p w u l v b y g k x z
-hu m e t n é o r s z á g a h l
-da e r n i d b v o a l g p t f ø m j h y s
-de e r n i u a g s h l p t d c f m
-it e a i n c o t r l u p s d b z m v h ò f à g
-nl 
-pl 
-lv 
-ee 
-fr 
-cs 
-fi 
-lt 
+sv e a n r t i s l o d g m f k u v h c p ä å b ö y j x w z é q ü ø è í ë ² ú á æ ó â ū ž ł ñ à ř ô ũ γ ê ð ý û ç š œ ě ½ ĩ č ȁ ĝ ć ã
+es e a o n s r i l d t c u m p b g v y f ó h q í j z á é x ñ k ú w ² º ü è ć ä ö à ō ª ã ž ā ê ç š ă č ô å ë ý ı µ σ ο φ ε ð â ß ł æ ť ì μ ι λ ς γ ρ α ν û ī ś 現 代 書 簡 ř ą ż þ đ
+en e a t n i o s r h l d c u m f p g w b y v k j x z q é á ü ć ö ä ó í š ā ç ł è ō ž ă ş ń ø ś ī ñ ū ą ² č ğ ș ż ú ã å ô ı ê τ ř ź à ï ễ ậ õ ë ň μ ß æ β
+hu e a t l s n k r i o z á é g m b y v d h p j u ö f ó ő c í ü ú ű w x q н ä а и о с ć š è č ² е ă ç л р â ł ș ô ь ர ş ц ы й т в я п г м ë å ø ž ı ß ï ì ã ț ñ ń ஹ ġ ě ā æ ê à ř ğ ơ ð இ ண ட ம ய ன ò
+da e r n t a s d i l o g m k f v b u h p å æ ø y c j w z x é q ö ü ä í á ó è ć š ð ā ² ú ç ã ō ß ʔ à ž ʿ ī ½ ë û ì ễ ỳ ś ¼ ¾ ê ô ģ ļ ñ ń č ē ő
+de e n i r s t a d h u l g o c m b f k w z v p ü ä j ö y ß x q é á í ø ó š ç è ō ā å _ č â ë ł ș ř ê ū æ ý ú ð ą ı ś ô ʿ µ ã ń ³ ž ć κ ʻ ² ñ т э ė ḫ î ò ½ ω ň ̇ ş à ə ă ě ï
+it e a i o n l r t s c d u p m g v f b h z q è à k ò y w ù j ì x é º ö ü š á ª č ó í _ ū ä ñ ë ō ć ú ç â ø ā ô ī ă ³ ã ʿ ș ț å î æ ß ž ḍ ² ő ḫ ÿ ł ï ê π ņ µ ễ ị ể đ
+nl e n a i r t o d s l g h v m k u p c w b j z f y x ë é q ï ü è á ö ² ó í ä ç â ú ø ñ à ō ô ½ š æ ł î ć ß ð ă ḷ õ ã ś π ê ę λ ə ŭ _ ÿ ò ī ň ř ž γ ı ş ậ º а φ 方 伯 ș 新 蜀 山 剑 侠 ὄ χ ο ς ā
+pl a i o e n z r w s t c y k d p m u l j ł g b h ą ę ó ż ś f ć ń v ź x é q ü á ö š í ä и ² ž о ð р ç à ñ č ß н ³ ř è ō к й м і л а в ч г ø ě ū ã у с _ д đ א ל ש ב ת ô μ ω ë ú ă å ʻ т б ш ё ė ŏ ş ı ň ю ы п
+lv a i s t e r u n ā k o m l p d v j ī z ē b g c š ū ņ ļ f ž h ķ ģ č x y w q ŗ ο ó ɑ ː ü ̇ о ō é ḷ ρ ə ŭ с е р д л и к ı í ν σ φ ς û î ö _ ę ş ĭ ð ğ ε υ ώ π η
+ee a e i s t l u k n o d m r v g j p h ä õ b ü ö f c y w z š т ž x е о и н м а ж ч q б ы ь в ô ð á с р 鳵 ю у к ù г 鄜 鬑 я ú ł ë à þ л д щ й é ï
+fr e s a n i t r l u o d c p m é v g f b h q à è x y j k ê z w ç ô â î ù œ û ï á ō ü ë í ó ö ć ä ñ š μ ú ā ū ń å ă ž υ ī č ý ο ι ø æ ṣ đ ı þ β ş ř η θ ώ ν ε ς ά τ α _ ś ż ł ź ě ạ ỵ ² ð ğ ò ộ
+cs o e a n t s l i v r k d u p m í c h z á y j b ě é ř ž ý č š ů g f ú w x ň ó ť ď q ö ² ü ä ć ł è ė ³ ľ α β τ π ç ț ń ś đ ο ρ ę ñ ê õ ß æ κ ï ợ ų â ð ứ ọ ŏ ŭ ă ș μ ν ά ω χ ι σ ό ς ù ğ
+fi a i n t e s l o u k ä m r v j h p y d ö g c b f w z x é š q á è ü í å ² ž ó ø ō ё ç ő ə č ć ł ë ñ ï ε η ζ θ đ μ к а п ê ³ ý ô ú 元 毛 仙 里 ğ ß â ã î ā à _ ě л р ш е ь т о б ъ м ń δ ð
+lt i a s o r e t n u k l m p d v j g ė y b ų š ž ą c į ū č z f h ę x w q é í ō γ á ε р б и а ā ú α σ ó ø ô ò ñ е п у л к с ј ī æ ρ φ ι ν ć à ı ł κ λ ί μ ļ 地 方 ē
