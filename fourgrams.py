@@ -4,7 +4,7 @@ languages = []
 all_fourgrams = []
 
 
-f = open("tr.txt", 'r', encoding="utf8") # open file with smth need to train
+f = open("out.txt", 'r', encoding="utf8") # open file with smth need to train
 for line in f:  # split text for deleting spaces and other symbols
     a.append(line.split()[0])
 f.close()
@@ -28,6 +28,6 @@ print("grams sorted \n")
 
 delete_second_element(all_fourgrams)
 w = open('fourgrams.txt', 'w', encoding="utf8")
-for item in range(len(languages)):
-        w.write("%s\n" % ' '.join((str(languages[item]), ' '.join([' '.join(q) for q in all_fourgrams[item]]))))
+for i in range(len(languages)):
+        w.write("%s\n" % (languages[i] + ' ' + ' '.join([' '.join(q) for q in all_fourgrams[i]])))
 w.close()
