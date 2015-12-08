@@ -14,8 +14,7 @@ for line in f:
 f.close()
 
 # for train
-
-vec_monograms_tr = open('vec_monograms_tr.txt')
+vec_monograms_tr = open('vec_monograms_tr.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_monograms_tr:
     vec = line.split()[1:]
@@ -30,7 +29,7 @@ for line in vec_monograms_tr:
     counter += 1
 vec_monograms_tr.close()
 
-vec_bigrams_tr = open('vec_bigrams_tr.txt')
+vec_bigrams_tr = open('vec_bigrams_tr.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_bigrams_tr:
     vec = line.split()[1:]
@@ -41,7 +40,7 @@ for line in vec_bigrams_tr:
 vec_bigrams_tr.close()
 
 
-vec_trigrams_tr = open('vec_trigrams_tr.txt')
+vec_trigrams_tr = open('vec_trigrams_tr.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_trigrams_tr:
     vec = line.split()[1:]
@@ -52,7 +51,7 @@ for line in vec_trigrams_tr:
 vec_trigrams_tr.close()
 
 
-vec_fourgrams_tr = open('vec_fourgrams_tr.txt')
+vec_fourgrams_tr = open('vec_fourgrams_tr.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_fourgrams_tr:
     vec = line.split()[1:]
@@ -64,63 +63,64 @@ vec_fourgrams_tr.close()
 
 
 
-w = open('vec_normize_tr.txt', 'w', encoding="utf8")
+'''w = open('vec_normize_tr.txt', 'w', encoding="utf8")
 for q in preprocessing.normalize(data_train):
     w.write(' '.join(str(i) for i in q) + '\n')
-w.close()
+w.close()'''
 
-data_train = [] # too much RAM
+#data_train = [] # too much RAM
 
 # for predict
-vec_monograms_tr = open('vec_monograms_ts.txt')
+vec_monograms_tr = open('vec_monograms_ts.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_monograms_tr:
     vec = line.split()
     for q in range(15):
         if q == 0:
             tmp = vec
-            data_train.append(tmp[32 * q:32 * q + 20])
+            data_predict.append(tmp[32 * q:32 * q + 20])
         else:
             tmp = vec
-            data_train[counter].extend(tmp[32 * q:32 * q + 20])
+            data_predict[counter].extend(tmp[32 * q:32 * q + 20])
 
     counter += 1
 vec_monograms_tr.close()
 
-vec_bigrams_tr = open('vec_bigrams_ts.txt')
+vec_bigrams_tr = open('vec_bigrams_ts.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_bigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[200 * q:200 * q + 60])
+        data_predict[counter].extend(tmp[200 * q:200 * q + 60])
     counter += 1
 vec_bigrams_tr.close()
 
 
-vec_trigrams_tr = open('vec_trigrams_ts.txt')
+vec_trigrams_tr = open('vec_trigrams_ts.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_trigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[300 * q:300 * q + 70])
+        data_predict[counter].extend(tmp[300 * q:300 * q + 70])
     counter += 1
 vec_trigrams_tr.close()
 
 
-vec_fourgrams_tr = open('vec_fourgrams_ts.txt')
+vec_fourgrams_tr = open('vec_fourgrams_ts.txt', 'r', encoding="utf8")
 counter = 0
 for line in vec_fourgrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[400 * q:400 * q + 100])
+        data_predict[counter].extend(tmp[400 * q:400 * q + 100])
     counter += 1
 vec_fourgrams_tr.close()
 
-
-w = open('vec_normize_ts.txt', 'w', encoding="utf8")
+data_predict.extend(data_train)
+data_predict = np.array(data_predict)
+w = open('vec_normize_ts_tr.txt', 'w', encoding="utf8")
 for q in preprocessing.normalize(data_predict):
     w.write(' '.join(str(i) for i in q) + '\n')
 w.close()
