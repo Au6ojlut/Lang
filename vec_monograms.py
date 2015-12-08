@@ -48,6 +48,6 @@ w.close()
 f = open('out2.txt', 'r', encoding="utf8")
 w = open('vec_monograms_ts.txt', 'w', encoding="utf8")
 for line in f:
-    w.write(''.join(str(languages.index(line.split()[0])+1)) + ' ' + ' '.join(str(line[3:].count(q)) for q in vec_of_all_grams) + '\n')
+    w.write(' '.join(str(line[3:].count(q)) for q in vec_of_all_grams) + '\n')
 f.close()
 w.close()

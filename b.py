@@ -1,7 +1,7 @@
 import re
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
-
+from sklearn import preprocessing
 
 def delete_second_element(my_grams):
     for i in my_grams:
