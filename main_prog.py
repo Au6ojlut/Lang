@@ -62,6 +62,15 @@ for line in vec_fourgrams_tr:
     counter += 1
 vec_fourgrams_tr.close()
 
+
+
+w = open('vec_normize_tr.txt', 'w', encoding="utf8")
+for q in preprocessing.normalize(data_train):
+    w.write(' '.join(str(i) for i in q) + '\n')
+w.close()
+
+data_train = [] # too much RAM
+
 # for predict
 vec_monograms_tr = open('vec_monograms_ts.txt')
 counter = 0
@@ -111,6 +120,9 @@ for line in vec_fourgrams_tr:
 vec_fourgrams_tr.close()
 
 
-# normalize vectors
+w = open('vec_normize_ts.txt', 'w', encoding="utf8")
+for q in preprocessing.normalize(data_predict):
+    w.write(' '.join(str(i) for i in q) + '\n')
+w.close()
 
-data_train_norm = preprocessing.normalize(data_train)
+
