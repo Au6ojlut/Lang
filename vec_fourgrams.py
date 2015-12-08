@@ -30,10 +30,9 @@ fourgrams.close()
 f.close()
 
 print("grams ready \n")
-number_of_grams(all_grams, [32, 0, 0, 0])
-get_vec(vec_of_all_grams, all_grams, len(languages))
+number_of_grams(all_grams, [32, 0, 0, 400])
+get_vec(vec_of_all_grams, all_fourgrams, len(languages))
 print("vector of grams ready ", len(vec_of_all_grams))
-
 data_train = []
 data_answer = []
 

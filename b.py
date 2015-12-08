@@ -8,12 +8,16 @@ def delete_second_element(my_grams):
         for j in i:
             j[1:] = []
 
-
+''' old ver
 def get_vec(all_vec, all_grams, languages_number):
     for q in range(languages_number):
         for j in range(len(all_grams)):
+            if all_grams[j]:
                 all_vec.extend(all_grams[j][q])
-
+'''
+def get_vec(all_vec, all_grams, languages_number):
+        for j in all_grams:
+                all_vec.extend(j)
 
 def list_merge_3(lstlst): #thanks http://habrahabr.ru/post/63539/ A LOT
     tmp = []
