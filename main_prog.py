@@ -1,10 +1,11 @@
 from b import *
 
 
-
+from sklearn.svm import SVC
 
 
 languages = []
+languages_tr = []
 data_train = []
 answer = []
 data_predict = []
@@ -35,7 +36,7 @@ for line in vec_bigrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[200 * q:200 * q + 60])
+        data_train[counter].extend(tmp[200 * q:200 * q + 10])
     counter += 1
 vec_bigrams_tr.close()
 
@@ -46,7 +47,7 @@ for line in vec_trigrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[300 * q:300 * q + 70])
+        data_train[counter].extend(tmp[300 * q:300 * q + 10])
     counter += 1
 vec_trigrams_tr.close()
 
@@ -57,7 +58,7 @@ for line in vec_fourgrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[400 * q:400 * q + 100])
+        data_train[counter].extend(tmp[400 * q:400 * q + 10])
     counter += 1
 vec_fourgrams_tr.close()
 
@@ -69,7 +70,7 @@ for q in preprocessing.normalize(data_train):
 w.close()'''
 
 #data_train = [] # too much RAM
-
+print('have data train')
 # for predict
 vec_monograms_tr = open('vec_monograms_ts.txt', 'r', encoding="utf8")
 counter = 0
@@ -92,7 +93,7 @@ for line in vec_bigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[200 * q:200 * q + 60])
+        data_predict[counter].extend(tmp[200 * q:200 * q + 10])
     counter += 1
 vec_bigrams_tr.close()
 
@@ -103,7 +104,7 @@ for line in vec_trigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[300 * q:300 * q + 70])
+        data_predict[counter].extend(tmp[300 * q:300 * q + 10])
     counter += 1
 vec_trigrams_tr.close()
 
@@ -114,15 +115,29 @@ for line in vec_fourgrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[400 * q:400 * q + 100])
+        data_predict[counter].extend(tmp[400 * q:400 * q + 10])
     counter += 1
 vec_fourgrams_tr.close()
 
-data_predict.extend(data_train)
+
+lang2 = open('vec_monograms_tr.txt', 'r', encoding='utf8')
+
+for line in lang2:
+    languages_tr.append(line.split()[0])
+lang2.close()
+print('Have data predict')
+data_train = np.array(data_train)
 data_predict = np.array(data_predict)
-w = open('vec_normize_ts_tr.txt', 'w', encoding="utf8")
-for q in preprocessing.normalize(data_predict):
-    w.write(' '.join(str(i) for i in q) + '\n')
-w.close()
+model = SVC()
+model.fit(data_train, languages_tr)
+print('start predicting')
+predict_m = model.predict(data_predict)
 
 
+print(predict_m)
+predict_m = [int(s) for s in predict_m]
+print('start writing')
+end_ans = open('ans.txt', 'w', encoding='utf8')
+for item in predict_m:
+    end_ans.write(languages[item-1].upper() + '\n')
+end_ans.close()
