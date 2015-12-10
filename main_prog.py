@@ -36,7 +36,7 @@ for line in vec_bigrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[200 * q:200 * q + 10])
+        data_train[counter].extend(tmp[200 * q:200 * q + 30])
     counter += 1
 vec_bigrams_tr.close()
 
@@ -47,7 +47,7 @@ for line in vec_trigrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[300 * q:300 * q + 10])
+        data_train[counter].extend(tmp[300 * q:300 * q + 40])
     counter += 1
 vec_trigrams_tr.close()
 
@@ -58,7 +58,7 @@ for line in vec_fourgrams_tr:
     vec = line.split()[1:]
     for q in range(15):
         tmp = vec
-        data_train[counter].extend(tmp[400 * q:400 * q + 10])
+        data_train[counter].extend(tmp[400 * q:400 * q + 40])
     counter += 1
 vec_fourgrams_tr.close()
 
@@ -93,7 +93,7 @@ for line in vec_bigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[200 * q:200 * q + 10])
+        data_predict[counter].extend(tmp[200 * q:200 * q + 30])
     counter += 1
 vec_bigrams_tr.close()
 
@@ -104,7 +104,7 @@ for line in vec_trigrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[300 * q:300 * q + 10])
+        data_predict[counter].extend(tmp[300 * q:300 * q + 40])
     counter += 1
 vec_trigrams_tr.close()
 
@@ -115,7 +115,7 @@ for line in vec_fourgrams_tr:
     vec = line.split()
     for q in range(15):
         tmp = vec
-        data_predict[counter].extend(tmp[400 * q:400 * q + 10])
+        data_predict[counter].extend(tmp[400 * q:400 * q + 40])
     counter += 1
 vec_fourgrams_tr.close()
 
